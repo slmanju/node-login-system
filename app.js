@@ -8,16 +8,12 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var expressLayouts = require('express-ejs-layouts');
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 require("./config/passport-config");
+require("./config/database-config");
 
-// init db
-mongoose.connect('mongodb://localhost/loginapp');
-var db = mongoose.connection;
 
 // routes
 var index = require('./routes/index');
