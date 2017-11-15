@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login System</title>
+	<title><%- locals.title %></title>
 	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -10,7 +10,7 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-              <%if (user) { %>
+              <% if (user) { %>
               <li role="presentation"><a href="/">Dashboard</a></li>
               <li role="presentation"><a href="/users/logout">Logout</a></li>
               <% } else { %>
@@ -24,16 +24,16 @@
 
       <div class="row">
         <div class="col-lg-12">
-            <%if (success_msg && success_msg.length > 0) { %>
-            <div class="alert alert-success"><% success_msg %></div>
+            <%if (locals.success_msg && locals.success_msg.length > 0) { %>
+            <div class="alert alert-success"><%= locals.success_msg %></div>
             <% } %>
 
-            <%if (error_msg && error_msg.length > 0) { %>
-            <div class="alert alert-danger"><%error_msg%></div>
+            <%if (locals.error_msg && locals.error_msg.length > 0) { %>
+            <div class="alert alert-danger"><%= locals.error_msg %></div>
             <% } %>
 
-            <%if (error && error.length > 0) { %>
-            <div class="alert alert-danger"><%error%></div>
+            <%if (locals.error && locals.error.length > 0) { %>
+            <div class="alert alert-danger"><% locals.error %></div>
             <% } %>
 
             <%-body%>

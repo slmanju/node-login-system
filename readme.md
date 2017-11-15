@@ -1,4 +1,4 @@
-User register/login system
+User registration and login boilerplate
 
-User login boilerplate using Node, Express and Mongo.
+Node Js user registration and login system.
 

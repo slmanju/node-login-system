@@ -32,13 +32,13 @@ UserSchema.statics.saveUser = function (newUser, callback) {
 };
 
 // find user by username
-UserSchema.statics.findByUsername = function (username, callback) {
+UserSchema.statics.findUserByUsername = function (username, callback) {
     var query = { username: username };
     User.findOne(query, callback);
 };
 
 // find user by id
-UserSchema.statics.findById = function (id, callback) {
+UserSchema.statics.findUserById = function (id, callback) {
     User.findById(id, callback);
 };
 

@@ -10,6 +10,8 @@ var session = require('express-session');
 var expressLayouts = require('express-ejs-layouts');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // init db
 mongoose.connect('mongodb://localhost/loginapp');
@@ -42,6 +44,10 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
+
+// passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express Validator
 app.use(expressValidator({
