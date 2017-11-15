@@ -25,15 +25,15 @@
       <div class="row">
         <div class="col-lg-12">
             <%if (locals.success_msg && locals.success_msg.length > 0) { %>
-            <div class="alert alert-success"><%= locals.success_msg %></div>
+            <div class="alert alert-success"><%- locals.success_msg %></div>
             <% } %>
 
             <%if (locals.error_msg && locals.error_msg.length > 0) { %>
-            <div class="alert alert-danger"><%= locals.error_msg %></div>
+            <div class="alert alert-danger"><%- locals.error_msg %></div>
             <% } %>
 
             <%if (locals.error && locals.error.length > 0) { %>
-            <div class="alert alert-danger"><% locals.error %></div>
+            <div class="alert alert-danger"><%- locals.error %></div>
             <% } %>
 
             <%-body%>

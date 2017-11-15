@@ -13,6 +13,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+require("./config/passport-config");
+
 // init db
 mongoose.connect('mongodb://localhost/loginapp');
 var db = mongoose.connection;
@@ -77,6 +79,7 @@ app.use(function (req, res, next) {
     res.locals.error = req.flash('error');
     res.locals.errors = req.flash('errors');
     res.locals.user = req.user || null;
+
     next();
 });
 
